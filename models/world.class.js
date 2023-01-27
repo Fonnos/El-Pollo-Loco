@@ -9,10 +9,8 @@ class World {
 
 ];
     clouds = [
-        new Cloud(),
-        new Cloud(),
-        new Cloud(),
-        new Cloud(),
+        new Cloud("720", "480"),
+        
     ];
 canvas;
 ctx;
