@@ -11,7 +11,8 @@ class World {
     ];
 
     clouds = [
-        new Cloud("720", "480"),
+        new Cloud(0, 0, 'img/5_background/layers/4_clouds/1.png'),
+        new Cloud(720, 0, 'img/5_background/layers/4_clouds/2.png'),
     ];
 
     backgroundObjects = [
