@@ -1,4 +1,8 @@
 class Chicken extends MoveableObject {
+    height = 100;
+    width = this.height;
+    y = 440 - this.height;  //flexibele y durch unterschiedliche höhe der chicken
+    
 
 
     constructor() {

@@ -1,4 +1,7 @@
 class Character extends MoveableObject {
+    height = 200;
+    width = this.height / 2;
+    y = 430 - this.height;
     
 
     constructor() {
