@@ -7,14 +7,16 @@ class Chicken extends MoveableObject {
         'img/3_enemies_chicken/chicken_normal/1_walk/2_w.png',
         'img/3_enemies_chicken/chicken_normal/1_walk/3_w.png'
     ];
+    speedIndex;
     
 
 
-    constructor() {
+    constructor(speedIndex) {
         super().loadImage('img/3_enemies_chicken/chicken_normal/1_walk/1_w.png');
         this.loadImages(this.IMAGES_WALKING);
-        this.x = 200 + Math.random() * 500; // Zahl zwischen 200 und 700;
+        this.x = 1000 + Math.random() * 2000; // Zahl zwischen 200 und 700;
         this.animate();
+        this.moveLeft(speedIndex);
 
         
     }
@@ -26,14 +28,17 @@ class Chicken extends MoveableObject {
             let path = this.IMAGES_WALKING[i];
             this.img = this.imageCache[path];
             this.currentImage++;
-        }, 100);  
+        }, 120);  
     }
 
 
 
-moveLeft() {
-
-
+moveLeft(speedIndex) {
+    setInterval(() => {
+        this.x -= speedIndex;
+        //neue Position nachdem Wolken verschwinden
+    }, 1000 / 60);
 }
 
 }
+

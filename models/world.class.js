@@ -4,10 +4,16 @@ class World {
 
     character = new Character();
     enemies = [
-        new Chicken(),
-        new Chicken(),
-        new Chicken(),
-        new Chicken(),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
+        new Chicken(0.5 + Math.random() * 2),
     ];
 
     clouds = [
