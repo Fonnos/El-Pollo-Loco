@@ -1,5 +1,6 @@
 class Character extends MoveableObject {
     height = 200;
+    speed = 5;
     width = this.height / 2;
     y = 430 - this.height;
     IMAGES_WALKING = [
@@ -26,19 +27,35 @@ class Character extends MoveableObject {
     }    
            
         
-
+ 
 
     animate() {
-        console.log(this.world);
+
             setInterval(() => {
                 if (this.world.keyboard.RIGHT) {
+                this.x += this.speed;
+            }
+            }, 1000 / 60)
+
+            setInterval(() => {
+                if (this.world.keyboard.LEFT) {
+                this.x -= this.speed;
+            }
+            }, 1000 / 60)
+
+
+            setInterval(() => {
+                if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+                    
+
+                    //walkanimation
                     let i = this.currentImage % this.IMAGES_WALKING.length; //ermitteln des restes 
-                let path = this.IMAGES_WALKING[i];
-                this.img = this.imageCache[path];
-                this.currentImage++;
+                    let path = this.IMAGES_WALKING[i];
+                    this.img = this.imageCache[path];
+                    this.currentImage++;
                 }
                 
-            }, 100); 
+            }, 50); 
         }
 
             
