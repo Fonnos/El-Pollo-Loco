@@ -6,6 +6,7 @@ class MoveableObject {
     width = 100;
     imageCache = {};
     currentImage = 0;
+    otherDirection = false;
 
     
 
