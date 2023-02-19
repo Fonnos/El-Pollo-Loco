@@ -16,7 +16,7 @@ class Cloud extends MoveableObject {
             this.x -= 0.16;
             //neue Position nachdem Wolken verschwinden
             if (this.x <= -720) {
-                this.x = 720;
+                this.x = 2160;
             }
         }, 1000 / 60);
     }

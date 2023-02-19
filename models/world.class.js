@@ -3,33 +3,11 @@ class World {
     //Reihenfolge der Objectwerte = path, x, y, width, height
 
     character = new Character();
-    enemies = [
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-        new Chicken(0.5 + Math.random() * 2),
-    ];
+    enemies = level1.enemies ;
 
-    clouds = [
-        new Cloud(0, 0, 'img/5_background/layers/4_clouds/1.png'),
-        new Cloud(720, 0, 'img/5_background/layers/4_clouds/2.png'),
-    ];
+    clouds = level1.clouds ;
 
-    backgroundObjects = [
-        new BackgroundObject('img/5_background/layers/air.png'),
-        new BackgroundObject('img/5_background/layers/3_third_layer/1.png'),
-        new BackgroundObject('img/5_background/layers/3_third_layer/1.png'),
-        new BackgroundObject('img/5_background/layers/2_second_layer/1.png'),
-        new FirstBackgroundObject(0, 0, 'img/5_background/layers/1_first_layer/1.png'),
-        new FirstBackgroundObject(720, 0, 'img/5_background/layers/1_first_layer/2.png'),
-        
-    ];
+    backgroundObjects = level1.backgroundObjects ;
 
     canvas;
     ctx;
