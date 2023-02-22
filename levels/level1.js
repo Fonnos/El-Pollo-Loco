@@ -10,6 +10,7 @@ const level1 = new Level(
         new Chicken(0.5 + Math.random() * 2),
         new Chicken(0.5 + Math.random() * 2),
         new Chicken(0.5 + Math.random() * 2),
+        new Endboss(),
     ],
     [
         new Cloud(0, 0, 'img/5_background/layers/4_clouds/1.png'),

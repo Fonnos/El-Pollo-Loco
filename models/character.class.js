@@ -1,8 +1,10 @@
 class Character extends MoveableObject {
+    x = 250;
     height = 200;
     speed = 5;
     width = this.height / 2;
-    y = 430 - this.height;
+    y = 200 - this.height;
+    
 
     IMAGES_WALKING = [
         'img/2_character_pepe/2_walk/W-21.png',
@@ -23,6 +25,7 @@ class Character extends MoveableObject {
         this.loadImages(this.IMAGES_WALKING);
 
         this.animate();
+        this.applyGrafity();
         
         
     }    
@@ -53,10 +56,7 @@ class Character extends MoveableObject {
                     
 
                     //walkanimation
-                    let i = this.currentImage % this.IMAGES_WALKING.length; //ermitteln des restes 
-                    let path = this.IMAGES_WALKING[i];
-                    this.img = this.imageCache[path];
-                    this.currentImage++;
+                    this.playAnimation(this.IMAGES_WALKING)
                 }
                 
             }, 50); 
