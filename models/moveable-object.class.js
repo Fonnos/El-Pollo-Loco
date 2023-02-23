@@ -9,15 +9,17 @@ class MoveableObject {
     acceleration = 1;
 
    applyGrafity() {
-       
            setInterval(() => {
-            if (this.y < 230 ) {
+            if (this.isAboveGround() ) {
                this.y -= this.speedY;
                this.speedY -= this.acceleration;
             }
            }, 1000 / 25);
        
        
+   }
+   isAboveGround() {
+    return this.y < 230
    }
 
 
