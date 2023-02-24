@@ -33,7 +33,6 @@ class Chicken extends MoveableObject {
 moveLeft(speedIndex) {
     setInterval(() => {
         this.x -= speedIndex;
-        //neue Position nachdem Wolken verschwinden
     }, 1000 / 60);
 }
 

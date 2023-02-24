@@ -34,11 +34,11 @@ class Character extends MoveableObject {
     constructor() {
         
         super().loadImage('img/2_character_pepe/1_idle/idle/I-1.png');
-        this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_JUMPING);
-
-        this.animate();
+        this.loadImages(this.IMAGES_WALKING);
         this.applyGrafity();
+        this.animate();
+        
         
         
     }    
@@ -47,35 +47,41 @@ class Character extends MoveableObject {
  
 
     animate() {
-
-            setInterval(() => {
-                this.walking_sound.pause();
-                if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
-                this.x += this.speed;
-                this.otherDirection = false;
-                this.walking_sound.play();
+        setInterval(() => {
+            this.walking_sound.pause();
+            if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
+                this.moveRight();
             }
-                if (this.world.keyboard.LEFT && this.x > 0) {
-                this.x -= this.speed;
-                this.otherDirection = true;
-                this.walking_sound.play();
+            if (this.world.keyboard.LEFT && this.x > 0) {
+                this.moveLeft();
+            }
+            if (this.world.keyboard.UP && !this.isAboveGround()) {
+                this.jump();
             }
             this.world.camera_x = -this.x + 200;
-            }, 1000 / 60)
+        }, 1000 / 60);
+        this.pickImages();        
+    }
 
+    
+    pickImages() {
+        setInterval(() => {
+            if(this.isAboveGround()) {
+                this.playAnimation(this.IMAGES_JUMPING)
+            }
 
-            setInterval(() => {
-                if(this.isAboveGround()) {
-                    this.playAnimation(this.IMAGES_JUMPING)
-                }
+            if (this.world.keyboard.RIGHT && !this.isAboveGround()) {
+                //walkanimation
+                this.playAnimation(this.IMAGES_WALKING)
+            }
 
-                if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
-                    //walkanimation
-                    this.playAnimation(this.IMAGES_WALKING)
-                }
-                
-            }, 50); 
-        }
+            if (this.world.keyboard.LEFT && !this.isAboveGround()) {
+                //walkanimation
+                this.playAnimation(this.IMAGES_WALKING)
+            }             
+            
+        }, 50); 
+    }
 
             
        
@@ -85,8 +91,5 @@ class Character extends MoveableObject {
     
 
 
-    jump() {
-
-
-    }
+    
 }
